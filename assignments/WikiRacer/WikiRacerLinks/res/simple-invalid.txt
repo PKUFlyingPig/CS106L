@@ -1,0 +1,6 @@
+<p>
+In <a href="/wiki/Topology">topology</a>, the <b>long line</b> (or <b>Alexandroff line</b>) is a 
+<a href="/wiki/Topological_space">topological space</a> somewhat similar to the <a href="/wiki/Real_line">real line</a>, but in a certain way "longer". It behaves locally just like the real line, but has different large-scale properties (e.g., it is neither <a href="/wiki/Lindel%C3%B6f_space">Lindelöf</a> nor <a href="/wiki/Separable_space">separable</a>). Therefore, it serves as one of the basic counterexamples of topology 
+<a href="http://www.ams.org/mathscinet-getitem?mr=507446">[1]</a>. Intuitively, the usual real-number line consists of a countable number of line segments [0,1) laid end-to-end, whereas the long line is constructed from an uncountable number of such segments. You can consult 
+<a href="/wiki/Special:BookSources/978-1-55608-010-4">this</a> book for more information.
+</p>
