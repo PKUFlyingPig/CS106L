@@ -1,0 +1,72 @@
+These are some sample runs of the program between different pages.
+Essentially, the code is printing the ladder (vector<string>) every time
+it is dequeued at the top of the while loop. We encourage you to do the same
+in your code so that you can compare with this sample output and see if your
+code is going towards the high priority links first. The later samples will
+be especially useful.
+
+As always, feel free to reach out to us if you want to discuss anything!
+
+
+====================================
+Start page: Fruit
+End page: 	Strawberry
+====================================
+
+{Fruit}
+
+Ladder found:
+	Fruit -> Strawberry
+
+====================================
+Start page: Malted_milk
+End page: 	Gene
+====================================
+
+{Malted_milk}
+{Malted_milk, Enzyme}
+{Malted_milk, Enzyme, Transcription_(genetics)}
+Duration: 69043786
+Ladder found:
+        Malted_milk -> Enzyme -> Transcription_(genetics) -> Gene
+
+
+====================================
+Start page: Emu
+End page: 	Stanford
+====================================
+
+{Emu}
+{Emu, Food_and_Drug_Administration}
+{Emu, Food_and_Drug_Administration, Duke_University}
+Duration: 91933946
+Ladder found:
+        Emu -> Food_and_Drug_Administration -> Duke_University -> Stanford
+
+
+====================================
+Start page: Gummy_bear
+End page: 	Marc_Tessier-Lavigne
+====================================
+
+{Gummy_bear}
+{Gummy_bear, Germany}
+{Gummy_bear, Germany, Gerhard_Casper}
+
+Ladder found:
+        {Gummy_bear, Germany, Gerhard_Casper, Marc_Tessier-Lavigne}
+
+
+====================================
+Start page: Albert_Einstein
+End page: 	Scientology
+====================================
+
+{Albert_Einstein}
+{Albert_Einstein, Relationship_between_religion_and_science}
+
+Ladder found:
+        {Albert_Einstein, Relationship_between_religion_and_science, Scientology}
+
+Note: Wikipedia pages are constantly changing. If you match all outputs for input-big.txt,
+don't worry if your ladder is different for this start and end page.
