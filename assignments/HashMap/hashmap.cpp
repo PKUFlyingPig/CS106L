@@ -285,55 +285,43 @@ M& HashMap<K, M, H>::operator[](const K& key) {
      * you see these weird compiler directives.
      * Please remove them before you start writing code.
      */
-
-    // BEGIN STARTER CODE (remove these lines before you begin)
-    (void) key;
-
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wreturn-stack-address"
-
-    M trash; // trash lives on the stack
-    return trash; // return value is a reference to a variable that has been freed :(
-
-#pragma GCC diagnostic pop
-
-    // END STARTER CODE
-
     // complete the function implementation (1 line of code)
     // isn't it funny how the bad starter code is longer than the correct answer?
+    return insert({key, {}}).first->second;
 }
 
 template <typename K, typename M, typename H>
 bool operator==(const HashMap<K, M, H>& lhs, const HashMap<K, M, H>& rhs) {
-
-    // BEGIN STARTER CODE (remove these lines before you begin)
-    (void) lhs, (void) rhs;
-    return true;
-    // END STARTER CODE
-
     // complete the function implementation (~4-5 lines of code)
+    if (lhs.size() != rhs.size()) return false;
+    for (const auto& [key, value] : lhs) {
+        const auto& iter = rhs.find(key);
+        if (iter == rhs.end() || iter->second != value) return false;
+    }
+    return true;
 }
 
 template <typename K, typename M, typename H>
 bool operator!=(const HashMap<K, M, H>& lhs, const HashMap<K, M, H>& rhs) {
-
-    // BEGIN STARTER CODE (remove these lines before you begin)
-    (void) lhs, (void) rhs;
-    return true;
-    // END STARTER CODE
-
     // complete the function implementation (1 line of code)
+    return !(lhs==rhs);
 }
 
 template <typename K, typename M, typename H>
 std::ostream& operator<<(std::ostream& os, const HashMap<K, M, H>& rhs) {
-
-    // BEGIN STARTER CODE (remove these lines before you begin)
-    (void) rhs;
-    return os;
-    // END STARTER CODE
-
     // complete the function implementation (~7 lines of code)
+    os << "{";
+    auto iter = rhs.begin();
+    if (iter != rhs.end()) {
+        os << iter->first << ":" << iter->second;
+        ++iter;
+    }
+    while (iter != rhs.end()) {
+        os << ", " << iter->first << ":" << iter->second;
+        ++iter;
+    }
+    os << "}";
+    return os;
 }
 
 // Milestone 4 (required) - special member functions

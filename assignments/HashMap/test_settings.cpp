@@ -18,14 +18,14 @@
 #define RUN_TEST_2D 1
 
 // Milestone 3: operator[]
-#define RUN_TEST_3A 0
-#define RUN_TEST_3B 0
+#define RUN_TEST_3A 1
+#define RUN_TEST_3B 1
 // Milestone 3: operator<<
-#define RUN_TEST_3C 0
-#define RUN_TEST_3D 0
+#define RUN_TEST_3C 1
+#define RUN_TEST_3D 1
 // Milestone 3: operator== and operator!=
-#define RUN_TEST_3E 0
-#define RUN_TEST_3F 0
+#define RUN_TEST_3E 1
+#define RUN_TEST_3F 1
 // Milestone 4: copy operations
 #define RUN_TEST_4A 0
 #define RUN_TEST_4B 0
