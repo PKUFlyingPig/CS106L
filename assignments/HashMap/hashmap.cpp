@@ -230,6 +230,48 @@ std::vector<node*> new_buckets_array(new_bucket_count);
 
 // Milestone 2 (optional) - iterator-based constructors
 // You will have to type in your own function headers in both the .cpp and .h files.
+/*
+ * Range constructor
+ * Creates a HashMap with the elements in the range [first, last).
+ *
+ * Requirements: InputIt must be iterators to a container whose elements are pair<K, M>.
+ *
+ * Usage:
+ *      std::vector<std::pair<char, int>> vec {{'a', 3}, {'b', 5}, {'c', 7}};
+ *      HashMap<char, int> map{vec.begin(), vec.end()};
+ *
+ * Complexity: O(N), where N = std::distance(first, last);
+ */
+template <typename K, typename M, typename H>
+template <typename InputIt>
+HashMap<K, M, H>::HashMap(InputIt first, InputIt last, size_t bucket_count, const H& hash) : HashMap(bucket_count, hash) {
+    auto iter = first;
+    while (iter != last) {
+        insert({iter->first, iter->second});
+        ++iter;
+    }
+}
+
+/*
+ * Initializer list constructor
+ * Creates a HashMap with the elements in the initializer list init
+ *
+ * Requirements: init must be an initializer_list whose elements are pair<K, M>.
+ *
+ * Usage:
+ *      HashMap<char, int> map{{'a', 3}, {'b', 5}, {'c', 7}};
+ *
+ * Complexity: O(N), where N = init.size();
+ *
+ * Notes: you may want to do some research on initializer_lists. The most important detail you need
+ * to know is that they are very limited, and have three functions: init.begin(), init.end(), and init.size().
+ * There are no other ways to access the elements in an initializer_list.
+ * As a result, you probably want to leverage the range constructor you wrote in the previous function!
+ *
+ * Also, you should check out the delegating constructor note in the .cpp file.
+ */
+template <typename K, typename M, typename H>
+HashMap<K, M, H>::HashMap(std::initializer_list<value_type> init, size_t bucket_count, const H& hash) : HashMap(init.begin(), init.end(), bucket_count, hash){}
 
 
 // Milestone 3 (required) - operator overloading

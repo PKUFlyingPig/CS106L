@@ -11,11 +11,11 @@
 // Milestone 1 test cases (starter code) will automatically be run.
 
 // Milestone 2: range constructor (optional)
-#define RUN_TEST_2A 0
-#define RUN_TEST_2B 0
+#define RUN_TEST_2A 1
+#define RUN_TEST_2B 1
 // Milestone 2: initializer list constructor (optional)
-#define RUN_TEST_2C 0
-#define RUN_TEST_2D 0
+#define RUN_TEST_2C 1
+#define RUN_TEST_2D 1
 
 // Milestone 3: operator[]
 #define RUN_TEST_3A 0
