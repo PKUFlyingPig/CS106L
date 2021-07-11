@@ -493,6 +493,65 @@ public:
 
     /* Milestone 4 headers (you need to declare these) */
     // TODO: declare headers for copy constructor/assignment, move constructor/assignment
+    /*
+     * Copy constructor
+     * Creates a HashMap with the elements in the rhs HashMap
+     *
+     * Requirements: the rhs HashMap should have the same <K, M, H>.
+     *
+     * Usage:
+     * 		HashMap<char, int> rhs{{'a', 3}, {'b', 4}, {'c', 5}};
+     * 		HashMap<char, int> map(rhs);
+     *
+     * Complexity: O(N), where N = rhs.size();
+     *
+     */
+    HashMap(const HashMap& rhs);
+
+    /*
+     * Copy assignment operator
+     * copy the elements on the rhs of the assignment into the lhs HashMap
+     *
+     * Requirements: the rhs HashMap should have the same <K, M, H>.
+     *
+     * Usage:
+     * 		HashMap<char, int> rhs{{'a', 3}, {'b', 4}, {'c', 6}};
+     * 		HashMap<char, int> map;
+     * 		map = rhs;
+     *
+     * Complexity: O(N), where N = rhs.size();
+     *
+     */
+     HashMap& operator=(const HashMap& rhs);
+
+     /*
+      * Move constructor
+      * Creates HashMap by move the elements in the rhs r-value HashMap into the new created one.
+      *
+      * Requirements: the rhs HashMap should have the same <K, M, H>
+      *
+      * Usage:
+      *		HashMap<char, int> rhs{{'a', 3}, {'b', 4}, {'c', 5}};
+      *		HashMap<char, int> map(std::move(rhs)); // now rhs should be empty
+      *
+      * Complexity: O(N), where N = rhs.size()
+      *
+      */
+      HashMap(HashMap&& rhs);
+
+     /*
+      * Move assignment operator
+      * Move the elements in the rhs r-value HashMap into the lhs HashMap
+      * Requirements: the rhs HashMap should have the same <K, M, H>.
+      *
+      * Usage:
+      * 		HashMap<char, int> rhs{{'a', 3}, {'b', 4}, {'c', 6}};
+      * 		HashMap<char, int> map;
+      * 		map = std::move(rhs); // now rhs should be empty
+      *
+      * Complexity: O(N), where N = rhs.size();
+      */
+      HashMap& operator=(HashMap&& rhs);
 
 private:
     /*

@@ -27,20 +27,20 @@
 #define RUN_TEST_3E 1
 #define RUN_TEST_3F 1
 // Milestone 4: copy operations
-#define RUN_TEST_4A 0
-#define RUN_TEST_4B 0
-#define RUN_TEST_4C 0
+#define RUN_TEST_4A 1
+#define RUN_TEST_4B 1
+#define RUN_TEST_4C 1
 
 // Milestone 4: move operations
 // warning: these may pass even if you haven't implemented them
 // - before implementing copy or move, 3AB will fail, 3CDEFGH will pass
 // - after implementing copy but not move, 3GH will fail, 3ABCDEF will pass
 // - after implementing copy & move, all of them should pass (you should aim for this)
-#define RUN_TEST_4D 0
-#define RUN_TEST_4E 0
-#define RUN_TEST_4F 0
-#define RUN_TEST_4G 0
-#define RUN_TEST_4H 0
+#define RUN_TEST_4D 1
+#define RUN_TEST_4E 1
+#define RUN_TEST_4F 1
+#define RUN_TEST_4G 1
+#define RUN_TEST_4H 1
 // Milestone 5: benchmark (optional)
-#define RUN_BENCHMARK 0
+#define RUN_BENCHMARK 1
 

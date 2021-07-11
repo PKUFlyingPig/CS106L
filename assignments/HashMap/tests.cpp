@@ -1481,7 +1481,6 @@ void D_move_ctor_basic() {
         move_constructed_answer.at(key)++;
         VERIFY_TRUE(check_map_equal(move_constructed, move_constructed_answer), __LINE__);
     }
-
     for (const auto& key : {"A", "B", "Not found again!"}) {
         move_constructed.erase(key);
         move_constructed_answer.erase(key);
@@ -1491,8 +1490,6 @@ void D_move_ctor_basic() {
     move_constructed.clear();
     move_constructed_answer.clear();
     VERIFY_TRUE(check_map_equal(move_constructed, move_constructed_answer), __LINE__);
-
-
 }
 #endif
 
@@ -1537,7 +1534,6 @@ void F_move_edge() {
         HashMap<std::string, int> move_constructed{std::move(map)};
         HashMap<std::string, int> move_assign;
         move_assign = std::move(map);
-
         std::unordered_map<std::string, int> map_answer;
         std::unordered_map<std::string, int> move_constructed_answer{map_answer};
         std::unordered_map<std::string, int> move_assign_answer;
@@ -1587,7 +1583,6 @@ void F_move_edge() {
         #pragma GCC diagnostic pop
         // your code could crash at this line due to memory problems!
     }
-
     {
         /* 3. Expanded self-assignment */
         // suppress the really annoying warnings
@@ -1810,7 +1805,7 @@ int A_benchmark_insert_erase() {
         {
             auto my_start = clock_type::now();
 
-            HashMap<int, int, decltype(good_hash_function)> my_map(5000000, good_hash_function);
+            HashMap<int, int, decltype(good_hash_function)> my_map(size, good_hash_function);
             for (int element : million) {
                 my_map.insert({element, element});
             }
@@ -1873,7 +1868,7 @@ int B_benchmark_find() {
         size_t my_map_result, std_map_result;
         {
 
-            HashMap<int, int, decltype(good_hash_function)> my_map(5000000, good_hash_function);
+            HashMap<int, int, decltype(good_hash_function)> my_map(size, good_hash_function);
             for (size_t i = 0; i < million.size(); i += 2) {
                 int element = million[i];
                 my_map.insert({element, element});
@@ -1939,7 +1934,7 @@ int C_benchmark_iterate() {
         std::shuffle(million.begin(), million.end(), rng);
         size_t my_map_result, std_map_result;
         {
-            HashMap<int, int, decltype(good_hash_function)> my_map(5000000, good_hash_function);
+            HashMap<int, int, decltype(good_hash_function)> my_map(size, good_hash_function);
             for (int element : million) {
                 my_map.insert({element, element});
             }

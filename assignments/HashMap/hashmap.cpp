@@ -328,5 +328,52 @@ std::ostream& operator<<(std::ostream& os, const HashMap<K, M, H>& rhs) {
 // You will have to type in your own function headers in both the .cpp and .h files.
 
 // provide the function headers and implementations (~35 lines of code)
+// copy constructor
+template <typename K, typename M, typename H>
+HashMap<K, M, H>::HashMap(const HashMap& rhs) : HashMap(rhs.bucket_count(), rhs._hash_function) {
+    for (auto [key, value] : rhs) {
+        insert({key, value});
+    }
+}
 
+// copy assignment operator
+template <typename K, typename M, typename H>
+HashMap<K, M, H>& HashMap<K, M, H>::operator=(const HashMap& rhs) {
+    if (&rhs == this) return *this;
+    clear();
+    for (auto [key, value] : rhs) {
+        insert({key, value});
+    }
+    return *this;
+}
+
+// move constructor
+template <typename K, typename M, typename H>
+HashMap<K, M, H>::HashMap(HashMap&& rhs) :
+    _size{std::move(rhs._size)},
+    _hash_function{std::move(rhs._hash_function)},
+    _buckets_array{rhs.bucket_count(), nullptr} {
+    for (size_t i = 0; i < rhs.bucket_count(); i++) {
+        _buckets_array[i] = std::move(rhs._buckets_array[i]);
+        rhs._buckets_array[i] = nullptr;
+    }
+    rhs._size = 0;
+}
+
+// move assignment operator
+template <typename K, typename M, typename H>
+HashMap<K, M, H>& HashMap<K, M, H>::operator=(HashMap&& rhs) {
+    if (this != &rhs) {
+        clear();
+        _size = std::move(rhs._size);
+        _hash_function = std::move(rhs._hash_function);
+        _buckets_array.resize(rhs.bucket_count());
+        for (size_t i = 0; i < rhs.bucket_count(); i++) {
+            _buckets_array[i] = std::move(rhs._buckets_array[i]);
+            rhs._buckets_array[i] = nullptr;
+        }
+        rhs._size = 0;
+    }
+    return *this;
+}
 /* end student code */
