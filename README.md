@@ -27,9 +27,9 @@ The important lectures are in bold. I feel much more comfortable to write c++ st
 
 There are two programming assignments to help you practice what you have learned in class.
 
-[WikiRacer](http://web.stanford.edu/class/cs106l/wikiracer.html) : You will implement a famous game in C++. 
+[WikiRacer](https://web.stanford.edu/class/archive/cs/cs106l/cs106l.1212/wikiracer.html) : You will implement a famous game in C++. 
 
-[HashMap](https://web.stanford.edu/class/cs106l/hashmap2.html#) : You will implement a template container in C++, and compare it with the official STL implementation std::unordered_map<K, V>.
+[HashMap](https://web.stanford.edu/class/archive/cs/cs106l/cs106l.1212/hashmap2.html) : You will implement a template container in C++, and compare it with the official STL implementation std::unordered_map<K, V>.
 
 ## Want to learn more ?
 
